@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigation"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_gravity="bottom"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="horizontal">
+
+
+
+    <LinearLayout
+        android:id="@+id/viewHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imvHome"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/ic_home_selected" />
+        <TextView
+            android:id="@+id/tvHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="12sp"
+            android:layout_marginTop="3dp"
+            android:textColor="#25ABB5"
+            android:fontFamily="@font/en_bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewNumber"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imvNumber"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/ic_number" />
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number"
+            android:textColor="#25ABB5"
+            android:textSize="12sp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/en_bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewWatch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imvWatch"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/ic_video" />
+
+        <TextView
+            android:id="@+id/tvWatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watch"
+            android:textColor="#25ABB5"
+            android:textSize="12sp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/en_bold"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/viewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imvInfo"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/ic_info" />
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Information"
+            android:textColor="#25ABB5"
+            android:textSize="12sp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/en_bold"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

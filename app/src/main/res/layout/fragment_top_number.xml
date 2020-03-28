@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/viewParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vpr_movie"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"></android.support.v4.view.ViewPager>
+
+            <fragment
+                android:name="app.free.corona.virus.fragments.Number.NumberOverviewFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></fragment>
+
+
+
+            <fragment
+                android:name="app.free.corona.virus.fragments.Number.CountryOverviewFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></fragment>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

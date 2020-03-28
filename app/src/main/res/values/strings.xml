@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Corona</string>
+
+    <string name="banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_id">ca-app-pub-3940256099942544/1033173712</string>
+
+
+    <string name="admob_app_id">ca-app-pub-4133054392126687~9428120113</string>
+    <string name="native_advance_id">ca-app-pub-9300807108243394/8939650433</string>
+    <string name="there_error">There\'s error happend</string>
+
+</resources>
