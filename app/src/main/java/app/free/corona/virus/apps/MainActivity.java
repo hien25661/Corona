@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity {
                 break;
             case 1:
                 currentIndex = 1;
+                numberTopFragment = NumberTopFragment.newInstance();
                 transaction.replace(R.id.content, numberTopFragment, NumberTopFragment.class.getName());
                 transaction.commit();
                 break;

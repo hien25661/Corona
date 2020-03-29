@@ -26,15 +26,17 @@ import app.free.corona.virus.BaseFragment;
 import app.free.corona.virus.CoronaApplication;
 import app.free.corona.virus.R;
 import app.free.corona.virus.databinding.FragmentNumberOverviewBinding;
+import app.free.corona.virus.helper.interfaces.SimpleCallBack;
 import app.free.corona.virus.services.responses.corona.OverviewResponse;
 import app.free.corona.virus.utils.AbstractObserver;
 import app.free.corona.virus.utils.Utils;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-public class NumberOverviewFragment extends BaseFragment {
+public class NumberOverviewFragment extends BaseFragment  {
     private FragmentNumberOverviewBinding mBinding;
     private Context mContext;
+    private SimpleCallBack simpleCallBack;
 
     public static NumberOverviewFragment newInstance() {
         NumberOverviewFragment fragment = new NumberOverviewFragment();
@@ -48,12 +50,13 @@ public class NumberOverviewFragment extends BaseFragment {
             mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_number_overview, container, false);
             this.mContext = mBinding.getRoot().getContext();
         }
-        initView();
+        //initView();
 
         return mBinding.getRoot();
     }
 
-    private void initView() {
+    public void initView(SimpleCallBack callBack) {
+        this.simpleCallBack = callBack;
         initPieChart();
     }
 
@@ -83,6 +86,8 @@ public class NumberOverviewFragment extends BaseFragment {
                         Snackbar snackbar = Snackbar.make(mBinding.getRoot(),
                                 R.string.there_error, Snackbar.LENGTH_LONG);
                         snackbar.show();
+                        if(simpleCallBack == null)return;
+                        simpleCallBack.failed();
                     }
                 }));
 
@@ -188,5 +193,7 @@ public class NumberOverviewFragment extends BaseFragment {
             tvDivide.setBackgroundColor(Color.BLACK);
             mBinding.tableDataCountry.addView(tvDivide);
         }
+        if(simpleCallBack == null) return;
+        simpleCallBack.success();
     }
 }

@@ -54,19 +54,20 @@ public class CountryOverviewFragment extends BaseFragment {
             mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_country_overview, container, false);
             this.mContext = mBinding.getRoot().getContext();
         }
-        initView();
+        mBinding.rcvList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL,false));
+        //initView();
 
         return mBinding.getRoot();
     }
 
-    private void initView() {
-        mBinding.rcvList.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL,false));
+    public void initView() {
+
         initData();
     }
 
     private void initData() {
         mList.clear();
-
+        mBinding.progressbar.setVisibility(View.VISIBLE);
         compositeDisposable.add(coronaApi.getCountriesInfor("cases")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -81,6 +82,7 @@ public class CountryOverviewFragment extends BaseFragment {
                             mList.addAll(value);
                             setData(mList);
                         }
+                        mBinding.progressbar.setVisibility(View.GONE);
 
                     }
 
@@ -90,6 +92,7 @@ public class CountryOverviewFragment extends BaseFragment {
                         Snackbar snackbar = Snackbar.make(mBinding.getRoot(),
                                 R.string.there_error, Snackbar.LENGTH_LONG);
                         snackbar.show();
+                        mBinding.progressbar.setVisibility(View.GONE);
                     }
                 }));
 
